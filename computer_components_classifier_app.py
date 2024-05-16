@@ -9,6 +9,9 @@ st.title("Computer Component Classifier")
 
 model = load_model('component_classifier.h5')
 
+# Define class names directly here
+class_names = ['case','cpu', 'gpu', 'hdd', 'keyboard', 'monitor', 'motherboard', 'mouse', 'ram']
+
 def predict(img):
     img = img.resize((128, 128))
     img_array = image.img_to_array(img) / 255.0
@@ -24,5 +27,4 @@ if uploaded_file is not None:
     st.write("")
     st.write("Classifying...")
     prediction = predict(img)
-    class_names = list(train_data.class_indices.keys())
     st.write(f"Prediction: {class_names[np.argmax(prediction)]}")
