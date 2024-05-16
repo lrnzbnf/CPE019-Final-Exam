@@ -27,4 +27,4 @@ if uploaded_file is not None:
     st.write("")
     st.write("Classifying...")
     prediction = predict(img)
-    st.write(f"This is a: {class_names[np.argmax(prediction)]}")
+    st.write(f"This is a {class_names[np.argmax(prediction)]}")
