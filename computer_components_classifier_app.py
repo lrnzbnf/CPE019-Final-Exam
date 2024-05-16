@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 
 # Load the trained model
-model = tf.keras.models.load_model('computer_components_classifier.h5')
+model = tf.keras.models.load_model('computer_components_classifier_weights.h5')
 
 # Define class names (update with your actual class names)
 class_names = ['case', 'cpu', 'gpu', 'hdd', 'keyboard', 'monitor', 'motherboard', 'mouse', 'ram'] 
