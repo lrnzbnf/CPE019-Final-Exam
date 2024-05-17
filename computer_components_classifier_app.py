@@ -27,4 +27,8 @@ if uploaded_file is not None:
     st.write("")
     st.write("Classifying...")
     prediction = predict(img)
-    st.write(f"This is a {class_names[np.argmax(prediction)]}")
+    max_prob_index = np.argmax(prediction)
+    if prediction[0][max_prob_index] < 0.5:
+        st.write("Unable to classify. Please try with a different image.")
+    else:
+        st.write(f"This is a {class_names[max_prob_index]}")
